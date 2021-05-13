@@ -1,0 +1,70 @@
+<%- include("partials/header") %>
+
+<div class="subbar">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav nav-tabs" style="border-bottom: 0px">
+        <li class="nav-item">
+          <a style="margin-left: 350px" class="nav-link" href="feed">All</a>
+        </li>
+        <li class="nav-item">
+          <a  class="nav-link" href="bo"
+            >Bed with Oxygen</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="p">Plasma</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="bwo">Bed without Oxygen</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="oc">Oxygen Supply</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="mt">Medicine Type</a>
+        </li>
+        <li class="nav-item " style="display: inline;">
+          <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for city">
+        </li>
+        
+      </ul>
+    </div>
+  </nav>
+</div>
+<br /><br />
+
+
+<% posts.forEach(function(post){ %>
+
+<div style="padding: 2%" class="jumbotron">
+  <h2 style="font-size: 30px" class="display-4"><%=post.name%></h2>
+  
+  <p style="text-align: right">City: <%=post.city%></p>
+  <hr />
+
+  <div style="font-size: 15px" class="info">
+    <p>
+      Age: <%=post.age%>
+      <br />
+      Temperature: <%=post.temperature%>
+      <br />
+      SPO2 Count: <%=post.count%>
+      <br />
+      Contact: <%=post.contact%>
+      <br />
+      Requirement: <%=post.requirement%>
+      <br />
+      Covid Test: <%=post.result%>
+
+    </p>
+    
+  </div>
+
+  <%=post.content%>
+  
+</div>
+<% }) %> 
+
+
+<%- include("partials/footer") %>

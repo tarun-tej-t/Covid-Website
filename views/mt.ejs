@@ -1,0 +1,52 @@
+<%- include("feed") %> 
+<% posts.forEach(function(post){ %>
+   <% if(post.requirement!="Medicine Type"){ %>
+       <% return; %>
+    <% } %>
+  <div style="  padding: 2%;" class="jumbotron">
+  
+     
+        <h2 style="font-size: 30px;" class="display-4"><%=post.name%></h2>
+        <p style="text-align: right;">
+          City:  <%=post.city%>
+        </p>
+      <hr>
+     
+        <div style="font-size: 15px;" class="info">
+          
+          <p>
+            Age:  <%=post.age%> 
+            <br>
+            Temperature: <%=post.temperature%>
+            <br>
+            SPO2 Count:  <%=post.count%>
+            <br>
+            Contact:  <%=post.contact%>
+            <br>
+            Requirement:  <%=post.requirement%>
+            <br>
+            Covid Test: <%=post.result%>
+          </p>
+          
+          
+          
+          <p><a href="tel:<%=post.contact%>"> Call    </a>/ <a target="_blank" href="https://api.whatsapp.com/send?phone=+91<%=post.contact%>">Whatsapp</a></p>
+         
+        
+          
+        
+        </div>
+    
+        <%=post.content%>
+
+      
+
+    
+    
+     
+  
+  </div>
+
+
+
+<% }) %> <%- include("partials/footer") %>
